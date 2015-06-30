@@ -17,4 +17,3 @@ class UrlHandlerTestCase(TestCase):
         expected_url = "www.google.co.in"
         actual_output = self.handler1.url_string
         self.assertNotEquals(actual_output, expected_url)
-    
