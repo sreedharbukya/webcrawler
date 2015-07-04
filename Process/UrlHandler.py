@@ -6,8 +6,8 @@ class UrlHandler():
         self.url_string = url_string
 
     def get_status_of_request(self):
-        self.status = self._parser_url_string()
-        return self.status
+        status = self._parser_url_string()
+        return status
 
     def _parser_url_string(self):
         url = urlparse(self.url_string)
