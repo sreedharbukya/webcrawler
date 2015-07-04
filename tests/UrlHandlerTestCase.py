@@ -1,5 +1,5 @@
 from unittest import TestCase
-from Process.UrlHandler import UrlHandler
+from crawler.UrlHandler import UrlHandler
 
 
 class UrlHandlerTestCase(TestCase):
