@@ -13,3 +13,5 @@ class UrlHandler():
         url = urlparse(self.url_string)
         if url.path or url.netloc:
             return True
+
+
