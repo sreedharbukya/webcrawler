@@ -1,7 +1,7 @@
-# webcrawler
+
 Web crawler
 
-Web crawler program is plain program to write. 
+Web crawler program is plain program.
 
 Project structure contains as follows: 
 
@@ -20,3 +20,8 @@ Webcrawler/
 |--.gitingore (git ignore files)
 
 |-- requirements.txt (third party dependency files)
+
+
+This program is developed by Sreedhar Bukya
+
+Please feel free to write me @ sreedhar.ece@iitkgp.ac.in
