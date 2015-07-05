@@ -24,7 +24,7 @@ class CrawlerProcess():
 
     def process_html_page_and_set_status_of_crawling(self, current_url):
         try:
-            html_dump = self.url_handler(current_url)
+            html_dump = self._url_handler(current_url)
             soup = BeautifulSoup(html_dump)
             for link in soup.findAll('a'):
                 found_url = urlparse.urljoin(current_url, link.get('href'))
@@ -44,23 +44,6 @@ class CrawlerProcess():
                 return url
         return False
 
-    def url_handler(self, url):
-        request = self.url_request_handler(url)
-        if request:
-            response = self.url_response_handler(request, url)
-            if response:
-                return response
-            else:
-                print "Problem in receiving response from Server"
-
-    def url_request_handler(self, url):
-        try:
-            request = urllib2.Request(url)
-            return request
-        except Exception as ex:
-            print "Problem in HTTP request for URL: %s with Exception %s" % (url, ex)
-            return None
-
     def url_response_handler(self, request, url):
         try:
             response = urllib2.urlopen(request)
@@ -71,6 +54,25 @@ class CrawlerProcess():
         except ValueError as ex:
             print 'Problem in Response for URL %s with Exception %s' % url, ex
             return None
+
+
+    def _url_handler(self, url):
+        request = self._url_request_handler(url)
+        if request:
+            response = self.url_response_handler(request, url)
+            if response:
+                return response
+            else:
+                print "Problem in receiving response from Server"
+
+    def _url_request_handler(self, url):
+        try:
+            request = urllib2.Request(url)
+            return request
+        except Exception as ex:
+            print "Problem in HTTP request for URL: %s with Exception %s" % (url, ex)
+            return None
+
 
 
 if __name__ == "__main__":
