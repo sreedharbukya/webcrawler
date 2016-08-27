@@ -72,10 +72,3 @@ class CrawlerProcess():
         except Exception as ex:
             print "Problem in HTTP request for URL: %s with Exception %s" % (url, ex)
             return None
-
-
-
-if __name__ == "__main__":
-    inputURL = "https://www.python.org/"
-    handler = CrawlerProcess(inputURL)
-    handler.start_web_crawler()
